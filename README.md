@@ -12,10 +12,10 @@ This is [the main source file](./src/index.ts) using `transform` hook to convert
 
 The Typescript declaration for the custom file extension(`.to-upper`) is [here](./src/script.d.ts).
 
-And the declaration is set configured to exposed in package.json `exports['.'].types` field, so plugin users can refer this declaration by adding one line to `vite-env.d.ts` as following.
+And the declaration is set configured to exposed in package.json `exports['./script'].types` field, so plugin users can refer this declaration by adding one line to `vite-env.d.ts` as following.
 
 ```ts
-/// <reference types="@author/vite-plugin-your-plugin-name" />
+/// <reference types="@author/vite-plugin-your-plugin-name/script" />
 ```
 
 This is required unless the type declaration is published to [DefinitlyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) and installed in your plugin.

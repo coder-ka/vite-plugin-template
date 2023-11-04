@@ -8,6 +8,9 @@
     ".": {
       "import": "./dist/index.cjs.js",
       "require": "./dist/index.umd.js",
+      "types": "./types/index.d.ts"
+    },
+    "./script": {
       "types": "./src/script.d.ts"
     }
   },
