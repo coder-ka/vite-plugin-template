@@ -1,0 +1,36 @@
+{
+  "name": "vite-plugin-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.cjs.js",
+      "require": "./dist/index.umd.js",
+      "types": "./src/script.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "npm run typecheck && npm run build:esm && npm run build:cjs",
+    "build:esm": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.esm.js",
+    "build:cjs": "esbuild src/index.ts --bundle --platform=node --format=cjs --outfile=dist/index.cjs.js",
+    "typecheck": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "/dist",
+    "/types",
+    "/src/script.d.ts"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "esbuild": "^0.19.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
+}
