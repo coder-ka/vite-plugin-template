@@ -10,7 +10,7 @@ export function vitePluginFuro(): Plugin {
       if (fileRegex.test(id)) {
         return {
           code: compileFileToJS(src),
-          map: null, // ソースマップがあれば提供する
+          map: null, // If a source map exists, provide it here.
         };
       }
 
